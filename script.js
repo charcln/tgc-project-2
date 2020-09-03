@@ -3,6 +3,8 @@ $.getJSON(
     function(data){
         console.log(data);
 
+        // Retrieve specific data from the api end-point
+
         var thumbnail = data.items[0].volumeInfo.imageLinks.thumbnail;
         console.log(thumbnail);
         
@@ -28,6 +30,7 @@ $.getJSON(
         console.log(description);
 
         $(".thumbnail").attr("src", thumbnail);
+        $(".title").append(title);
         $(".author").append(author);
         $(".category").append(category);
         $(".country").append(country);

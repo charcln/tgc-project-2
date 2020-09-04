@@ -6,12 +6,14 @@
     <title>Document</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <!-- CSS -->
     <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
     <!-- #1: Retrieve specific data from the API end-point -->
-    <div class="container">
+    
         <img class="thumbnail"></img>
         <div class="title"></div>
         <div class="author"></div>
@@ -21,11 +23,17 @@
         <div class="format"></div>
         <div class="description"></div>
         <div class="cart-btn"></div>
-    </div>
 
     <!-- #2: Create a search engine to filter books from the API -->
-    <div class="container">
-        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+
+    <!-- Search Bar Code Credit: https://bootsnipp.com/snippets/GaeQR -->
+    <div class="container h-100">
+        <div class="d-flex justify-content-center h-100">
+          <div class="searchbar">
+            <input class="search_input" type="text" name="" placeholder="Search...">
+            <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+          </div>
+        </div>
     </div>
 
     <!-- jQuery -->

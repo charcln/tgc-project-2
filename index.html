@@ -6,41 +6,32 @@
     <title>Document</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <!-- CSS -->
     <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
     <!-- #1: Retrieve specific data from the API end-point -->
-    
-        <img class="thumbnail"></img>
-        <div class="title"></div>
-        <div class="author"></div>
-        <div class="category"></div>
-        <div class="country"></div>
-        <div class="price"></div>
-        <div class="format"></div>
-        <div class="description"></div>
-        <div class="cart-btn"></div>
+    <div id="bookProperties">
+        <img id="thumbnail"></img>
+        <div id="title"></div>
+        <div id="author"></div>
+        <div id="category"></div>
+        <div id="country"></div>
+        <div id="price"></div>
+        <div id="format"></div>
+        <div id="description"></div>
+        <div id="cart-btn"></div>
+    </div>
 
-    <!-- #2: Create a search engine to filter books from the API -->
-    <br><br>
-    <form>
-        <input type="text" placeholder="Title, author, genre, IBSN..." style="width:30%">
-        <input type="submit" value="Submit">
+    <!-- Search Engine -->
+    <form id="seachBar">
+        <input id="seachInput" type="text">
+        <input id="searchSubmit" type="submit">
     </form>
-      
-
-
-    <!-- Bootstrap Javascript -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <div id="searchResults"></div>
+    
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Axios -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/create-react-class/15.6.3/create-react-class.min.js"></script>
     <!-- Javascript -->
     <script src="script.js"></script>
 </body>

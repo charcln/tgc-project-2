@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- CSS -->
     <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+    <!-- #1: Retrieve specific data from the API end-point -->
     <div class="container">
         <img class="thumbnail"></img>
         <div class="title"></div>
@@ -17,6 +21,11 @@
         <div class="format"></div>
         <div class="description"></div>
         <div class="cart-btn"></div>
+    </div>
+
+    <!-- #2: Create a search engine to filter books from the API -->
+    <div class="container">
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
     </div>
 
     <!-- jQuery -->

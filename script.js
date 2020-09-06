@@ -42,9 +42,11 @@ $.getJSON(
         e.preventDefault();
 
         var query = $('#searchInput').val()
+        var queryReplaced = query.replace(/ /g, '%20');
+
         var apiKey = 'AIzaSyBBScIhEnsywXl2UrOg90Nd4DEaDRHSdzw'
     
-        var url = 'https://www.googleapis.com/books/v1/volumes?q=' + query + '&key=' + apiKey
+        var url = 'https://www.googleapis.com/books/v1/volumes?q=' + queryReplaced + '&key=' + apiKey
         console.log(url);
 
         $.get(url,function(data){

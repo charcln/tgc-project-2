@@ -3,7 +3,7 @@ $.getJSON(
     function(data){
         console.log(data);
 
-        // Retrieve specific data from the api end-point
+        // Retrieve specific data from the API end-point
 
         var thumbnail = data.items[0].volumeInfo.imageLinks.thumbnail;
         console.log(thumbnail);
@@ -29,13 +29,19 @@ $.getJSON(
         var description = data.items[0].volumeInfo.description;
         console.log(description);
 
-        $(".thumbnail").attr("src", thumbnail);
-        $(".title").append(title);
-        $(".author").append(author);
-        $(".category").append(category);
-        $(".country").append(country);
-        $(".price").append(price);
-        $(".format").append(format);
-        $(".description").append(description);
-    
-    })
+        $("#thumbnail").attr("src", thumbnail);
+        $("#title").append(title);
+        $("#author").append(author);
+        $("#category").append(category);
+        $("#country").append(country);
+        $("#price").append(price);
+        $("#format").append(format);
+        $("#description").append(description);
+
+    });
+
+var query = 'php'
+var apiKey = 'AIzaSyBBScIhEnsywXl2UrOg90Nd4DEaDRHSdzw'
+var url = 'https://www.googleapis.com/books/v1/volumes?q=' + query + '&key=' + apiKey
+
+console.log(url);

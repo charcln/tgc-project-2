@@ -1,12 +1,10 @@
 $.getJSON(
     "https://www.googleapis.com/books/v1/volumes?q=search+terms",
     function(data){
-        console.log(data);
 
         // Retrieve specific data from the API end-point
 
         var thumbnail = data.items[0].volumeInfo.imageLinks.thumbnail;
-        console.log(thumbnail);
         
         var title = data.items[0].volumeInfo.title;
         console.log(title);
@@ -40,8 +38,17 @@ $.getJSON(
 
     });
 
-var query = 'php'
-var apiKey = 'AIzaSyBBScIhEnsywXl2UrOg90Nd4DEaDRHSdzw'
-var url = 'https://www.googleapis.com/books/v1/volumes?q=' + query + '&key=' + apiKey
+    $('#searchBar').submit(function(e){
+        e.preventDefault();
 
-console.log(url);
+        var query = $('#searchInput').val()
+        var apiKey = 'AIzaSyBBScIhEnsywXl2UrOg90Nd4DEaDRHSdzw'
+    
+        var url = 'https://www.googleapis.com/books/v1/volumes?q=' + query + '&key=' + apiKey
+        console.log(url);
+
+        $.get(url,function(data){
+            console.log(data);
+        });
+
+    });

@@ -50,6 +50,7 @@ $.getJSON(
 
         $.get(url,function(data){
             console.log(data);
+            $('#searchResults').html('')
 
             data.items.forEach(res => {
                 result = `

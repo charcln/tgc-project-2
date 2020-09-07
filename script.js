@@ -66,7 +66,7 @@
                     <p>${res.searchInfo.textSnippet}</p>
                 `
 
-                // error caught: "TypeError: Cannot read property 'textSnippet' of undefined"
+                // error caught: "TypeError: Cannot read property of undefined"
 
                 $('#searchResults').append(result); // display retrieved data
 

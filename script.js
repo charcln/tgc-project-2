@@ -44,13 +44,23 @@ $.getJSON(
         var query = $('#searchInput').val()
         var queryReplaced = query.replace(/ /g, '%20');
 
-        var apiKey = 'AIzaSyBBScIhEnsywXl2UrOg90Nd4DEaDRHSdzw'
+        let result = ''
     
-        var url = 'https://www.googleapis.com/books/v1/volumes?q=' + queryReplaced + '&key=' + apiKey
-        console.log(url);
+        var url = 'https://www.googleapis.com/books/v1/volumes?q=' + queryReplaced + '&key=AIzaSyBBScIhEnsywXl2UrOg90Nd4DEaDRHSdzw'
 
         $.get(url,function(data){
             console.log(data);
+
+            data.items.forEach(res => {
+                result = `
+                    <h1>${res.volumeInfo.title}</h1>
+                    <p>${res.volumeInfo.authors}</p>
+                    <p>${res.searchInfo.textSnippet}</p>
+                `
+                console.log(result);
+                $('#searchResults').append(result);
+
+            });
         });
 
     });

@@ -12,25 +12,40 @@ $('#searchBar').submit(function(e){
 
     $.get(url,function(data){ //retrieve data from the api
         console.log(data);
+
         $('#searchResults').html('') // clear data when there is new user input (query)
 
-        data.items.forEach(res => { // get a response
+        result = ''
 
-            result = ''
-            if (res.volumeInfo.imageLinks != null) {
-                result += `<img src=${res.volumeInfo.imageLinks.thumbnail}></img>`;
-            } else {
-                result += `<img src="images/default-thumbnail.png" alt="Default thumbnail image by Booksify" width="128px" height="183px"></img>`; // show default thumbnail if api's thumbnail does not exist
-            }
+        if (data.totalItems == 0) {
+            // for unmatched user queries, the result will show the following:
+            result += `
+            <p>We couldn't find anything for your search – <b>${query}</b></p>
+            <ul>
+                <li>Make sure that all words are spelled correctly.</li>
+                <li>Try different keywords.</li>
+                <li>Try more general keywords.</li>
+            </ul>
+            `
+        } 
+        else {
+            data.items.forEach(res => { // get a response
+    
+                if (res.volumeInfo.imageLinks != null) {
+                    result += `<img src=${res.volumeInfo.imageLinks.thumbnail}></img>`;
+                } else {
+                    result += `<img src="images/default-thumbnail.png" alt="Default thumbnail image by Booksify" width="128px" height="183px"></img>`; // show default thumbnail if api's thumbnail does not exist
+                }
+    
+                result += `<h1>${res.volumeInfo.title}</h1><p>${res.volumeInfo.authors}</p>`
+    
+                if (res.searchInfo != null) {
+                    result += `<p>${res.searchInfo.textSnippet}</p>`;
+                }
 
-            result += `<h1>${res.volumeInfo.title}</h1><p>${res.volumeInfo.authors}</p>`;
-            if (res.searchInfo != null) {
-                result += `<p>${res.searchInfo.textSnippet}</p>`;
-            }
+            });
+        }
 
-            $('#searchResults').append(result); // display retrieved data
-
-        });
+        $('#searchResults').append(result); // display retrieved data
     });
-
 });

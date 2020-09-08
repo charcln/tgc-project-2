@@ -1,4 +1,5 @@
 // create a search/submit function for the form #searchBar
+// code reference: https://www.youtube.com/watch?v=C3yHhdsiWH0
 $('#searchBar').submit(function(e){
     e.preventDefault(); // prevent auto-submission of the form
 

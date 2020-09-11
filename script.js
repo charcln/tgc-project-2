@@ -38,15 +38,23 @@ $('#searchBar').submit(function(e){
                     result += `<img src="images/default-thumbnail.png" alt="Default thumbnail image by Booksify" width="128px" height="183px"></img>`; // show default thumbnail if api's thumbnail does not exist
                 }
     
-                result += `<h1>${res.volumeInfo.title}</h1><p>${res.volumeInfo.authors}</p>`
+                result += `
+                <a href="book.html"><h1>${res.volumeInfo.title}</h1></a>
+                <p>${res.volumeInfo.authors}</p>
+                `
     
                 if (res.searchInfo != null) {
                     result += `<p>${res.searchInfo.textSnippet}</p>`;
                 }
 
+                selfLink = res.selfLink;
+                console.log(selfLink);
+
             });
         }
 
         $('#searchResults').append(result); // display retrieved data
+        
     });
+
 });
